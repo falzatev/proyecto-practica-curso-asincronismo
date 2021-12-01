@@ -7,7 +7,7 @@ const characters = [];
 
 const characteresFunction = async (page) => {
     try {
-        const { results } = await fetchData(API);
+        const { results } = await fetchData(`${API}${apiPage.replace(':page', `${page}`)}`);
         console.log(results);
         results.map(character => {
             const card = cardGenerator(character);
